@@ -1,6 +1,6 @@
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Shop from "./Screen/Shop";
 import ShopCategory from "./Screen/ShopCategory";
 import Product from "./Screen/Product";
@@ -14,9 +14,8 @@ import kid_banner from './Components/Assets/banner_kids.png'
 function App() {
   return (
     <div>
-      <BrowserRouter>
+      <Router>
         <Navbar />
-
         <Routes>
           <Route path="/" element={<Shop />} />
           <Route path="/mens" element={<ShopCategory banner={men_banner} category="men" />} />
@@ -29,7 +28,7 @@ function App() {
           <Route path="/login" element={<LoginSignup />} />
         </Routes>
         <Footer />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 }
